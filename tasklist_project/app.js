@@ -1,29 +1,42 @@
-//replace heading
+// //event hander
+// const clearbtn = document.querySelector('.clear-tasks');
+// const card = document.querySelector('.card');
+// const heading = document.querySelector('h5');
 
-//create element
-const newHeading = document.createElement('h3');
 
-//add id
-newHeading.id = 'task-title';
+// //clearbtn.addEventListener("click", runEvent);
 
-// add text node
-newHeading.appendChild(document.createTextNode('Task List'));
+// card.addEventListener("mousemove", runEvent);
 
-//Get the old heading
-const oldHeading = document.getElementById('task-title');
 
-//Parent
-const cardAction = document.querySelector('.card-action');
-console.log(cardAction)
-cardAction.replaceChild(newHeading, oldHeading);
+// function runEvent(e){
 
-//remove list element
+//   console.log(`EVENT TYPE: ${e.type}`);
+//   heading.textContent = `X: ${e.offsetX} Y:${e.offsetY}`;
+// }
 
-const lis = document.querySelectorAll('li');
-const list = document.querySelector('ul');
+// //from event
+// const form = document.querySelector('form');
+// const taskInput = document.getElementById('task')
 
-console.log(list)
-lis[0].remove()
+// //console.log(form);
 
-//remove child element
-list.removeChild(lis[2])
+// form.addEventListener('submit', runEvent);
+
+// function runEvent(event){
+//   console.log(taskInput.value);
+//   event.preventDefault();
+// }
+
+document.body.addEventListener('click', runEvent);
+
+function runEvent(e){
+  if(e.target.parentElement.className === 'delete-item secondary-content'){
+    console.log("delete item");
+    console.log(e.target.parentElement.parentElement);
+    e.target.parentElement.parentElement.remove();
+    //e.target -> icon
+    //e.target.parentElement -> a tag
+    //a tag.parentElement -> li tag
+  };
+}
