@@ -1,6 +1,5 @@
 # Modern JS From The Beginning Projects
 
-> These are the main projects from my [Modern JS From The Beginning Udemy course](https://www.udemy.com/course/modern-javascript-from-the-beginning/)
 
 - Tasklist: DOM, Local Storage
 - Loan Calculator: DOM
